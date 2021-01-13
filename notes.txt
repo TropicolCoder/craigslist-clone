@@ -4,3 +4,5 @@ django-admin startproject tropicolcoders_list .
 django-admin startapp my_app
 create 'templates' folder in root directory
 create 'base.html' in templates
+make the base html say something
+add 'TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')' under the Build paths section in settings.py
