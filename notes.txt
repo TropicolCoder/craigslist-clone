@@ -2,7 +2,33 @@ terminal:
 pip install django
 django-admin startproject tropicolcoders_list .
 django-admin startapp my_app
+----
 create 'templates' folder in root directory
 create 'base.html' in templates
 make the base html say something
-add 'TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')' under the Build paths section in settings.py
+add code 'TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')' under the Build paths section in settings.py
+also assign ['TEMPLATE_DIR'] to 'DIRS' key in the 'TEMPLATES' dictionary
+also add code "STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)" at the end of the file(under 'STATIC_URL')
+create a 'home' view in views.py to render the base.html file
+create a 'urls' python file in the 'my_app' directory
+set up the 'urls' file by importing 'views' and 'paths' and create 'urlpatterns' list
+create a '' path to link to views.home in urlpatterns
+go to the main 'urls.py'(tropocolcoders_list) and import 'include' along with 'path'
+also configure the urlpatterns by adding a path to include 'my_app' urls in the base('') path
+----
+terminal:
+python manage.py migrate
+python manage.py createsuperuser
+----
+create a 'Search' class(which acts like a table in the database) in models.py
+also add 'search' and 'created' fields(which acts like columns in the table) in the class
+----
+terminal:
+python manage.py makemigrations
+python manage.py migrate
+----
+setup admin.py by importing the necessary models from models.py
+also register the Search class
+check it out on the admin platform
+modify the search class(with respect to the admin page) as needed
+check out the home page
