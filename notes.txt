@@ -1,0 +1,6 @@
+terminal:
+pip install django
+django-admin startproject tropicolcoders_list .
+django-admin startapp my_app
+create 'templates' folder in root directory
+create 'base.html' in templates
