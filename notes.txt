@@ -26,9 +26,14 @@ also add 'search' and 'created' fields(which acts like columns in the table) in 
 terminal:
 python manage.py makemigrations
 python manage.py migrate
+python manage.py runserver
 ----
 setup admin.py by importing the necessary models from models.py
 also register the Search class
 check it out on the admin platform
 modify the search class(with respect to the admin page) as needed
 check out the home page
+learn about 'materialize'
+download the starter-templates zip file from their website
+paste the contents into the 'static' file directory
+modify the base html as you wish
