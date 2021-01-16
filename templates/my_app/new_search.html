@@ -6,48 +6,27 @@
 
 {% block content %}
     <h2 style="text-align: center">{{ search | title }}</h2>
-
-
     <div class="row">
-        <div class="col s4">
-            <div class="card medium">
-                <div class="card-image">
-                    <a href="/"><img src="{% static 'images/puppy.jpg' %}"></a>
-                </div>
-                <div class="card-content">
-                    <p>TEST</p>
-                </div>
-                <div class="card-action">
-                    <a href="/">View listing: Price TEST PRICE</a>
-                </div>
-            </div>
-        </div>
-        <div class="col s4">
-            <div class="card medium">
-                <div class="card-image">
-                    <a href="/"><img src="{% static 'images/puppy.jpg' %}" alt=""></a>
-                </div>
-                <div class="card-content">
-                    <p>Testing</p>
-                </div>
-                <div class="card-action">
-                    <a href="/">View listing: Price TEST PRICE</a>
+    {% if final_postings %}
+        {% for post in final_postings %}
+            <div class="col s4">
+                <div class="card medium">
+                    <div class="card-image">
+                        <a href="{{ post.1 }}" target="_blank"><img src="{{ post.3 }}"></a>
+                    </div>
+                    <div class="card-content">
+                        <p>{{ post.0 }}</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="{{ post.1 }}" target="_blank">View listing: Price {{ post.2 }}</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col s4">
-            <div class="card medium">
-                <div class="card-image">
-                    <a href="/"><img src="{% static 'images/puppy.jpg' %}" alt=""></a>
-                </div>
-                <div class="card-content">
-                    <p>Testing</p>
-                </div>
-                <div class="card-action">
-                    <a href="/">View listing: Price TEST PRICE</a>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
+        <h5 style="font-style: italic; text-align: center">---- End of results ----</h5>
+    {% else %}
+        <h5 style="text-align: center">Sorry, we couldn't find any results for that search</h5>
+    {% endif %}
 
 {% endblock %}
