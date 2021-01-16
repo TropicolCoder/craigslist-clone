@@ -1,0 +1,1 @@
+web: gunicorn tropicolcoders_list.wsgi
