@@ -7,8 +7,35 @@
  */
 
 .icon-block {
-  padding: 0 15px;
+    padding: 0 15px;
 }
 .icon-block .material-icons {
 	font-size: inherit;
+}
+
+nav .brand-logo i, nav .brand-logo [class^="mdi-"], nav .brand-logo [class*="mdi-"], nav .brand-logo i.material-icons {
+    float: right;
+    margin-left: 8px;
+    margin-top: 4px;
+}
+
+.card-image {
+    height: 50%;
+    object-fit: contain;
+}
+
+@media screen and (max-width: 768px) {
+    .row .col.s4 {
+        width: 50%;
+    }
+    .row .col.s4.last {
+        width: 50%;
+        margin-left: 25%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .row .col.s4 {
+        width: 100%;
+    }
 }

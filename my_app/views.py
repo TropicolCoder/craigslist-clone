@@ -17,8 +17,13 @@ def new_search(request):
     search = request.POST.get('search')
     models.Search.objects.create(search=search)
     final_url = BASE_CRAIGSLIST_URL.format(quote_plus(search))
-    response = requests.get(final_url)
+    session = requests.Session()
+    response = session.get(final_url, headers={
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 '
+                      '(KHTML, like Gecko) Version/9.0.2 Safari/601.3.9'
+    })
     data = response.text
+    print(data)
     soup = BeautifulSoup(data, features='html.parser')
     post_listings = soup.find_all('li', {'class': 'result-row'})
 

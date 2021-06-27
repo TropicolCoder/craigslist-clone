@@ -7,11 +7,11 @@ create 'templates' folder in root directory
 create 'base.html' in templates
 make the base html say something
 add code 'TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')' under the Build paths section in settings.py
-also assign ['TEMPLATE_DIR'] to 'DIRS' key in the 'TEMPLATES' dictionary
+also assign [TEMPLATE_DIR] to 'DIRS' key in the 'TEMPLATES' dictionary
 also add code "STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)" at the end of the file(under 'STATIC_URL')
 create a 'home' view in views.py to render the base.html file
 create a 'urls' python file in the 'my_app' directory
-set up the 'urls' file by importing 'views' and 'paths' and create 'urlpatterns' list
+set up the 'urls' file by importing 'views' and 'path' and create 'urlpatterns' list
 create a '' path to link to views.home in urlpatterns
 go to the main 'urls.py'(tropocolcoders_list) and import 'include' along with 'path'
 also configure the urlpatterns by adding a path to include 'my_app' urls in the base('') path
